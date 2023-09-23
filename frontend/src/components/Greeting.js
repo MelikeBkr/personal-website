@@ -28,7 +28,8 @@ function Greeting() {
 
     return (
         <div>
-            {message}
+            <span className="typewriter-text">{message}</span>
+
         </div>
     );
 }

@@ -1,3 +1,4 @@
+/* Basic App styling and layout */
 .App {
     height: 100vh;
     background-color: #000000;
@@ -31,4 +32,58 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+/* Blinking Cursor Effect */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    color: #00FF00;
+    animation: blink 1s infinite;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Hover Scanline Effect */
+.scanline-effect {
+    background-image: linear-gradient(transparent 50%, #008000 50%);
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    transition: background-position 0.2s;
+}
+
+.scanline-effect:hover {
+    background-position: 100% 100%;
+}
+
+/* Typewriter Effect */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkTypewriter {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #00FF00;
+    }
+}
+
+.typewriter-text {
+    overflow: hidden;
+    border-right: .15em solid #00FF00;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typewriter 3s steps(30, end), blinkTypewriter .5s step-end infinite;
 }

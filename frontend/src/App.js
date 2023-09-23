@@ -10,7 +10,8 @@ function App() {
             <Header />
             <main>
                 <Greeting />
-                {/* Add more content here */}
+                <span className="blinking-cursor">|</span>
+                <a href="#" className="scanline-effect">Go to my blog</a>
             </main>
             <Footer />
         </div>
