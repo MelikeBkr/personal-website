@@ -1,32 +1,32 @@
 body {
-    font-family: 'VT323', monospace;
-    background-color: #000000;
-    color: #00FF00;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    font-family: 'VT323', monospace !important;
+    background-color: #000000 !important;
+    color: #00FF00 !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    overflow: hidden !important;
 }
 
 a {
-    color: #00FF00;
-    text-decoration: none;
+    color: #00FF00 !important;
+    text-decoration: none !important;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 header, footer {
-    padding: 1rem 0;
+    padding: 1rem 0 !important;
 }
 
 header {
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px solid #808080 !important;
 }
 
 footer {
-    border-top: 1px solid #808080;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    border-top: 1px solid #808080 !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
 }
