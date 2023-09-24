@@ -64,26 +64,30 @@
 /* Typewriter Effect */
 @keyframes typewriter {
     from {
-        width: 0;
+        max-width: 0;
     }
     to {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
-@keyframes blinkTypewriter {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #00FF00;
-    }
+.typewriter-container {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%; /* This will animate from 0 to the actual content's width */
+    animation:
+            typewriter 3s steps(30, end) forwards, /* Use forwards to keep the final frame */
+            blinkTypewriter .5s step-end infinite 3s; /* This starts the blinking after 3 seconds */
 }
 
 .typewriter-text {
-    overflow: hidden;
-    border-right: .15em solid #00FF00;
-    white-space: nowrap;
-    margin: 0 auto;
-    animation: typewriter 3s steps(30, end), blinkTypewriter .5s step-end infinite;
+    display: inline-block; /* To prevent wrapping */
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    color: #00FF00;
+    animation: blink 1s infinite;
+    display: inline-block;
 }

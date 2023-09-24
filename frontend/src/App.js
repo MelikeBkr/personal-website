@@ -10,8 +10,6 @@ function App() {
             <Header />
             <main>
                 <Greeting />
-                <span className="blinking-cursor">|</span>
-                <a href="#" className="scanline-effect">Go to my blog</a>
             </main>
             <Footer />
         </div>
