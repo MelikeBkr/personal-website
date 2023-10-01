@@ -1,19 +1,38 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Greeting from './components/Greeting' ;
-import './App.css';
+import Projects from './components/Projects' ;
+import './styles/App.css';
 
 function App() {
     return (
-        <div className="App">
-            <Header />
-            <main>
-                <Greeting />
-            </main>
-            <Footer />
-        </div>
+        <Router>
+            <div className="App">
+                <Header />
+                <main>
+                    <Routes>
+                        <Route path="/api/about-me" element={<Greeting />} About Me />
+                        <Route path="/api/projects" element={<Projects />} />
+                    </Routes>
+                    <a href="#" className="scanline-effect">Go to my blog</a>
+                    {/*
+                    TODO: The above tag will be replaced with the link component as below. Dont forget to update it.
+                    import { Link } from 'react-router-dom';
+                    <Link to="/blogs">Go to blog</Link>
+                    */}
+                </main>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
 export default App;
+
+
+
+
+
+

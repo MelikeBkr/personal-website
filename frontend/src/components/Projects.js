@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/App.css'; // Import the styling
 
-function Greeting() {
-    const [message, setMessage] = useState("");
+function Projects() {
+    const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('/api/about-me')
+        fetch('/api/projects')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.text();
+                return response.json();
             })
             .then(data => {
-                setMessage(data);
+                setProjects(data);
                 setLoading(false);
             })
             .catch(error => {
@@ -29,13 +28,16 @@ function Greeting() {
 
     return (
         <div>
-            <div className="typewriter-container">
-                <span className="typewriter-text">{message}</span>
-                <span className="blinking-cursor">|</span>
-            </div>
-            <br />
+            {projects.map((project, index) => (
+                <div key={index}>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <img src={project.imageUrl} />
+                    <a href={project.projectUrl}>View {project.title}</a>
+                </div>
+            ))}
         </div>
     );
 }
 
-export default Greeting;
+export default Projects;
