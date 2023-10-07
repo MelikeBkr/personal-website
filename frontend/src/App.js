@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import AboutMe from './components/AboutMe' ;
 import Projects from './components/Projects' ;
 import BlogPosts from './components/BlogPosts' ;
+import ContactForm from './components/ContactForm';
 import './styles/App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/api/about-me" element={<AboutMe />} />
                         <Route path="/api/projects" element={<Projects />} />
                         <Route path="/api/blog-posts" element={<BlogPosts />} />
+                        <Route path="api/contact" element={<ContactForm />} />
                     </Routes>
                     <a href="#" className="scanline-effect">Go to my blog</a>
                     {/*

@@ -2,11 +2,10 @@ package com.melike.personalwebsite.controller;
 
 import com.melike.personalwebsite.dto.AboutMeDTO;
 import com.melike.personalwebsite.dto.BlogPostDto;
+import com.melike.personalwebsite.dto.ContactFormDto;
 import com.melike.personalwebsite.dto.ProjectDto;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -39,6 +38,11 @@ public class PersonalWebsiteController
                 new BlogPostDto("My Second Blog Post", "This is my second blog post and it's content.",
                         LocalDate.now().minusDays(5)));
         return ResponseEntity.ok(blogPosts);
+    }
+    @PostMapping("/contact")
+    public ResponseEntity<String> handleContactFormSubmission(@RequestBody ContactFormDto contactForm) {
+        System.out.println("Received message from " + contactForm.getName() + ": " + contactForm.getMessage());
+        return ResponseEntity.ok("Message received!");
     }
 
 }
