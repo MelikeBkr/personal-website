@@ -1,12 +1,14 @@
 package com.melike.personalwebsite.controller;
 
 import com.melike.personalwebsite.dto.AboutMeDTO;
+import com.melike.personalwebsite.dto.BlogPostDto;
 import com.melike.personalwebsite.dto.ProjectDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -26,6 +28,17 @@ public class PersonalWebsiteController
                 // ... add as many projects as you like
         );
         return ResponseEntity.ok(projects);
+    }
+    @GetMapping("/blog-posts")
+    public ResponseEntity<List<BlogPostDto>> getBlogPosts()
+    {
+        //Temporary hardcoded data, will be replaced with real one
+        //when the content is fetched from a db
+        List<BlogPostDto> blogPosts = List.of(
+                new BlogPostDto("My First Blog Post", "This is the content of my first blog post.", LocalDate.now()),
+                new BlogPostDto("My Second Blog Post", "This is my second blog post and it's content.",
+                        LocalDate.now().minusDays(5)));
+        return ResponseEntity.ok(blogPosts);
     }
 
 }
