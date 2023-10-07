@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/App.css'; // Import the styling
 
-function Greeting() {
+function AboutMe() {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -38,4 +38,4 @@ function Greeting() {
     );
 }
 
-export default Greeting;
+export default AboutMe;
