@@ -29,15 +29,28 @@ public class PersonalWebsiteController
         return ResponseEntity.ok(projects);
     }
     @GetMapping("/blog-posts")
-    public ResponseEntity<List<BlogPostDto>> getBlogPosts()
+    public ResponseEntity<List<BlogPostDto>> getAllBlogPosts()
     {
         //Temporary hardcoded data, will be replaced with real one
         //when the content is fetched from a db
         List<BlogPostDto> blogPosts = List.of(
-                new BlogPostDto("My First Blog Post", "This is the content of my first blog post.", LocalDate.now()),
-                new BlogPostDto("My Second Blog Post", "This is my second blog post and it's content.",
+                new BlogPostDto(1L,"My First Blog Post", "This is the content of my first blog post.", LocalDate.now()),
+                new BlogPostDto(2L,"My Second Blog Post", "This is my second blog post and it's content.",
                         LocalDate.now().minusDays(5)));
         return ResponseEntity.ok(blogPosts);
+    }
+    @GetMapping("/blog-posts/{id}")
+    public ResponseEntity<BlogPostDto> getBlogPostById(@PathVariable Long id) {
+        // TODO: Fetch the post by ID from a database. Here, we'll just find it in the hardcoded list.
+        List<BlogPostDto> blogPosts = List.of(
+                new BlogPostDto(1L, "My First Blog Post", "This is the content of my first blog post.", LocalDate.now()),
+                new BlogPostDto(2L, "My Second Blog Post", "This is my second blog post and it's content.", LocalDate.now())
+        );
+        return blogPosts.stream()
+                .filter(post -> post.getId().equals(id))
+                .findFirst()
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
     @PostMapping("/contact")
     public ResponseEntity<String> handleContactFormSubmission(@RequestBody ContactFormDto contactForm) {

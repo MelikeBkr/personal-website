@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class BlogPostDto
 {
+    private Long id;
     private String title;
     private String content;
     private LocalDate datePublished;
