@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function BlogPosts() {
+function BlogPostList() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -39,4 +39,4 @@ function BlogPosts() {
     );
 }
 
-export default BlogPosts;
+export default BlogPostList;
