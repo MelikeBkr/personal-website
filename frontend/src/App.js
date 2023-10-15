@@ -7,6 +7,7 @@ import Projects from './components/Projects' ;
 import BlogPostList from './components/BlogPostList' ;
 import BlogPostDetail from './components/BlogPostDetail' ;
 import ContactForm from './components/ContactForm';
+import Login from './components/Login';
 import './styles/App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/api/blog-posts" element={<BlogPostList />} />
                         <Route path="/api/blog-posts/:id" element={<BlogPostDetail />} />
                         <Route path="/api/contact" element={<ContactForm />} />
+                        <Route path="/api/login" element={<Login />} />
                     </Routes>
                     <a href="#" className="scanline-effect">Go to my blog</a>
                     {/*

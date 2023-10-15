@@ -1,9 +1,6 @@
 package com.melike.personalwebsite.controller;
 
-import com.melike.personalwebsite.dto.AboutMeDTO;
-import com.melike.personalwebsite.dto.BlogPostDTO;
-import com.melike.personalwebsite.dto.ContactFormDTO;
-import com.melike.personalwebsite.dto.ProjectDTO;
+import com.melike.personalwebsite.dto.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,5 +53,16 @@ public class PersonalWebsiteController
     public ResponseEntity<String> handleContactFormSubmission(@RequestBody ContactFormDTO contactForm) {
         System.out.println("Received message from " + contactForm.getName() + ": " + contactForm.getMessage());
         return ResponseEntity.ok("Message received!");
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserLoginDTO userLoginDTO) {
+        // Logic to validate user credentials (e.g., against a database)
+
+        // If invalid credentials, return an unauthorized error
+        // return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+
+        // If valid, return a success message or token
+        return ResponseEntity.ok("Login successful!");
     }
 }
