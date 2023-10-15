@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
-public class BlogPostDto
+public class BlogPostDTO
 {
     private Long id;
     private String title;

@@ -20,7 +20,7 @@ function App() {
                         <Route path="/api/projects" element={<Projects />} />
                         <Route path="/api/blog-posts" element={<BlogPostList />} />
                         <Route path="/api/blog-posts/:id" element={<BlogPostDetail />} />
-                        <Route path="api/contact" element={<ContactForm />} />
+                        <Route path="/api/contact" element={<ContactForm />} />
                     </Routes>
                     <a href="#" className="scanline-effect">Go to my blog</a>
                     {/*
