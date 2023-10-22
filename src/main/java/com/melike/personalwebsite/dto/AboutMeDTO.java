@@ -9,5 +9,5 @@ public class AboutMeDTO
 {
     private String name;
     private String bio;
-    private String profileImage;
+    private String socialLink;
 }

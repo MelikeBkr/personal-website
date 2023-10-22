@@ -13,14 +13,14 @@ public class PersonalWebsiteController
 {
     @GetMapping("/about-me")
     public AboutMeDTO getAboutMeDetails() {
-        return new AboutMeDTO("Melike Bakir", "A software engineer with a passion for coding.", "Full-stack Developer");
+        return new AboutMeDTO("Melike Bakir", "A software engineer with a passion for coding.", "Linkedin Profile");
     }
     @GetMapping("/projects")
     public ResponseEntity<List<ProjectDTO>> getProjects() {
         //TODO:for now there are temporary hardcoded list of projects, but later it will be fetched from a database or GitHub
         List<ProjectDTO> projects = List.of(
-                new ProjectDTO("Project Skylab", "Description of Project Skylab", "imageUrl1", "projectUrl1"),
-                new ProjectDTO("Project New Horizons", "Description of Project New Horizons", "imageUrl2", "projectUrl2")
+                new ProjectDTO("Project Skylab", "Description of Project Skylab", "projectUrl1"),
+                new ProjectDTO("Project New Horizons", "Description of Project New Horizons", "projectUrl2")
                 // ... add as many projects as you like
         );
         return ResponseEntity.ok(projects);
